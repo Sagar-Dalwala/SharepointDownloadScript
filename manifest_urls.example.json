@@ -1,0 +1,50 @@
+{
+  "_comment": "SharePoint/Teams Lecture Video Configuration",
+  "_instructions": [
+    "1. Copy this file to 'manifest_urls.json' in the same directory",
+    "2. Add your subject names as top-level keys",
+    "3. For each subject, add an array of video objects with 'name' and 'url' fields",
+    "4. The 'url' should be the complete videomanifest URL from SharePoint/Teams",
+    "5. URLs typically expire in 6-24 hours, so download in batches",
+    "6. Run: python download_lectures.py --parallel 3"
+  ],
+  "_getting_urls": [
+    "Method 1 - From Teams:",
+    "  1. Open Teams → Class channel → Files tab",
+    "  2. Right-click recording → 'Open in SharePoint'",
+    "  3. In SharePoint, click 'Download' (don't download yet)",
+    "  4. Open Browser DevTools (F12) → Network tab",
+    "  5. Look for 'videomanifest' request and copy the full URL",
+    "",
+    "Method 2 - From SharePoint:",
+    "  1. Navigate to SharePoint with videos",
+    "  2. Click on a video to open player",
+    "  3. Open DevTools (F12) → Network tab → Refresh",
+    "  4. Filter by 'videomanifest' and copy the URL"
+  ],
+  "_url_format": "https://centralindia1-mediap.svc.ms/transform/videomanifest?provider=spo&inputFormat=mp4&cs=...&format=dash&altManifestMetadata=...",
+  "_batch_recommendations": {
+    "slow_internet_1-5_mbps": "5-10 videos, use --parallel 1 or 2",
+    "medium_internet_10-50_mbps": "10-20 videos, use --parallel 3-5",
+    "fast_internet_50+_mbps": "20-30 videos, use --parallel 5-8"
+  },
+  "AML": [
+    {
+      "name": "Lecture_01_Introduction",
+      "url": "PASTE_YOUR_VIDEOMANIFEST_URL_HERE"
+    },
+    {
+      "name": "Lecture_02_Linear_Regression",
+      "url": "PASTE_YOUR_VIDEOMANIFEST_URL_HERE"
+    }
+  ],
+  "DAA": [
+    {
+      "name": "Lecture_01_Complexity_Analysis",
+      "url": "PASTE_YOUR_VIDEOMANIFEST_URL_HERE"
+    }
+  ],
+  "AdvanceCyberSecurity": [],
+  "Prob&Stat": [],
+  "TechWrite&SoftSkills": []
+}

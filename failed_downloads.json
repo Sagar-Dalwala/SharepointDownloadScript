@@ -1,0 +1,11 @@
+{
+  "timestamp": "2025-12-09T20:05:40.892538",
+  "failed": [
+    {
+      "subject": "test",
+      "name": "test",
+      "url": "",
+      "error": "Rate limited (429) - too many requests. Try again later."
+    }
+  ]
+}
